@@ -42,30 +42,45 @@
             </div>
         </nav>        
     </div>
-    <div class="container">
-        <div class="row">
+    <section id="conteudo">
+        <div class="container">
+            <div class="row">
 
-            <!--Tabela Panorama-->
+                <!--Tabela Panorama-->
+        
+                <div class="col-4">
+                    <table id="panoramica">
+                        <tr><th id="title" colspan="2"><img src="_images\5728184 - coronavirus covid-19 flu influenza mers sars virus.png" alt="Coronavirus"> Total de Infectados</th></tr>
+                        <tr><td><img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo</td><td>1.273.794</td></tr>
+                        <tr><td><img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil</td><td>11.254</td></tr>
+                        <th id="title" colspan="2"><img src="_images\5929228 - death grave halloween rip.png" alt="Mortes"> Mortes</th>
+                        <tr><td><img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo</td><td>69.419</td></tr>
+                        <tr><td><img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil</td><td>486</td></tr>
+                        <th id="title" colspan="2"><img src="_images\4443501 - healthy hygiene protect shield.png" alt="Recuperados"> Recuperados</th>
+                        <tr><td><img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo</td><td>260.193</td></tr>
+                        <tr><td><img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil</td><td>127</td></tr>
+                    </table>
+                </div>
+                <div class="col-8-auto">
+                    <iframe width="750" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="5" title="2019-nCoV" src="https://gisanddata.maps.arcgis.com/apps/Embed/index.html?webmap=14aa9e5660cf42b5b4b546dec6ceec7c&extent=-23.533773,11.535,-46.625290,-52.8632&zoom=true&previewImage=false&scale=false&disable_scroll=false&theme=dark"></iframe>
+                    <p>Fonte:  <a href="https://coronavirus.jhu.edu/map.html">“Johns Hopkins University”</a></p>
+                </div>
 
-            <div class="col-4">
-                <table id="panoramica">
-                    <tr><th id="title" colspan="2"><img src="_images\5728184 - coronavirus covid-19 flu influenza mers sars virus.png" alt="Coronavirus"> Total de Infectados</th></tr>
-                    <tr><td><img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo</td><td>1.273.794</td></tr>
-                    <tr><td><img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil</td><td>11.254</td></tr>
-                    <th id="title" colspan="2"><img src="_images\5929228 - death grave halloween rip.png" alt="Mortes"> Mortes</th>
-                    <tr><td><img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo</td><td>69.419</td></tr>
-                    <tr><td><img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil</td><td>486</td></tr>
-                    <th id="title" colspan="2"><img src="_images\4443501 - healthy hygiene protect shield.png" alt="Recuperados"> Recuperados</th>
-                    <tr><td><img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo</td><td>260.193</td></tr>
-                    <tr><td><img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil</td><td>127</td></tr>
-                </table>
             </div>
-            <div class="col-8-auto">
-                <iframe width="750" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="5" title="2019-nCoV" src="https://gisanddata.maps.arcgis.com/apps/Embed/index.html?webmap=14aa9e5660cf42b5b4b546dec6ceec7c&extent=-23.533773,11.535,-46.625290,-52.8632&zoom=true&previewImage=false&scale=false&disable_scroll=false&theme=dark"></iframe>
-                <p>Fonte:  <a href="https://coronavirus.jhu.edu/map.html">“Johns Hopkins University”</a></p>
-            </div>
-
         </div>
-    </div>
+    </section>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.getAttribute('href'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+
+    <footer>Criado por Vinícius Birsenek - Twitter | GitHub</footer>
   </body>
 </html>
