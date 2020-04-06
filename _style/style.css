@@ -1,0 +1,98 @@
+div#navbar {
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: #364061;
+    font-family: 'Segoe UI';
+    color: greenyellow;
+}
+
+#panoramica{
+    font-size: 15px;
+    background-color: rgba(68, 81, 117,.4);
+    border:rgba(68, 81, 117, .9);
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+    border-radius: 30px;
+}
+
+th#title {
+    padding-top: 10px;
+    padding-left: 5px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+table,tr,td {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    text-align: justify;
+}
+#title {
+    text-align: center;
+}
+
+#corpo {
+    width: 95%;
+    background-color: rgba(68, 81, 117,.4);
+    border-style: solid rgba(0,0,0,.5);
+    box-shadow: 2px 2px 10px rgba(0,0,0,.8);
+    border-radius: 30px;
+}
+
+#virus{
+    font-style: italic;
+}
+
+/*Cards*/
+#quemE{
+    font-size: 15px;
+    background-color: rgba(68, 81, 117,.4);
+    border:rgba(68, 81, 117, .9);
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+    border-radius: 30px;
+}
+#quemE:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+.card#prevencao {
+    background-color: rgba(68, 81, 117,.4);
+    border:rgba(68, 81, 117, .9);
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+    border-radius: 30px;
+}
+
+#prevencao h5{
+    margin-top: -4pt;
+}
+#prevencao:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+#medidas {
+    background-color: rgba(68, 81, 117,.4);
+    border:rgba(68, 81, 117, .9);
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+    border-radius: 30px;
+    font-size: small;
+    margin-bottom: 10px;
+}
+.card#medidas:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+#txInfec,#txMort {
+    width: fit-content;
+    font-size: small;
+}
+
+#margemCoronavirus {
+    padding-bottom: 10px;
+}
