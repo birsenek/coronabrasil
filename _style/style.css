@@ -45,6 +45,17 @@ body {
     margin: 15px;
 }
 
+.nav-button {
+    display:none;
+}
+
+.nav-button .line {
+    width: 35px;
+    height: 5px;
+    background-color: rgba(0, 168, 150);
+    margin: 6px 0;
+}
+
 #navegation-links a, #donation a {
     text-decoration: none;
     color: whitesmoke;
