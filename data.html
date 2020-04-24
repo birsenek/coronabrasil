@@ -1,17 +1,25 @@
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h5>Estimativa de Mortalidade</h5>
-                    <label for="customRange1">Taxa de Infecção <span id="infectionRates">46%</span></label><br>
-                    <input type="range" class="custom-range" min="1" max="90" id="txInfec" onmousemove="slider()" ontouchmove="slider()">
-                    <p id="customRange1">1%<span style="margin-left: 70pt;">90%</span></p>
-                    <label for="customRange2">Taxa de Mortalidade <span id="deathRates">2.6%</span></label><br>
-                    <input type="range" class="custom-range" min="0.1" max="5" step="0.1" id="txMort" onmousemove="slider()" ontouchmove="slider()">
-                    <p id="customRange2">0.1%<span style="margin-left: 70pt;">5%</span></p>
-                    Tamanho da população (em milhões): <br>
-                    <input type="number" name = "tamPop" id = "tamPop" min = "0" max = "9999" placeholder="209.3 milhões" default=209.3><br><br>
-                    <p><button onclick="estimateDeaths()" type="button" class="btn btn-danger">Calcular</button></p><br><br>
-                <p><span id="resultMort"></span></p>
+<div id="content">
+    <div id="mortality-slider">
+        <h3>Estimativa de Mortalidade</h3>
+        <p>Taxa de infecção <span id="infectionRates">46%</span></p>
+        <p>
+            <input type="range" class="slider" id="txInfec-slider" min="1" max="90" onmousemove="slider()" ontouchmove="slider()">
+            <div class="slider-range">
+                <span>1%</span>
+                <span>90%</span>
             </div>
+        </p>
+        
+        <p>Taxa de Mortalidade <span id="deathRates">5.1%</span> </p>
+        <input type="range" class="slider" id="txMort-slider" min="0.1" max="10" value="5.1" step="0.1" onmousemove="slider()" ontouchmove="slider()">
+        <div class="slider-range">
+            <span>0.1%</span>
+            <span>10%</span>
         </div>
+
+        <p>Tamanho da população (em milhões)</p>
+        <p><input type="number" id="tamPop" min="0" max="9999" default="209.3 milhões" placeholder="209.3 milhões"></p>
+        <button onclick="estimateDeaths()" id="calc">Calcular</button><br>
+        <span id="resultMort"></span>
     </div>
+</div> 
