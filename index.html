@@ -6,25 +6,31 @@
     <title>Coronavirus: SARS-CoV-2</title>
     <link rel="stylesheet" href="_style/style.css">
     <script src="/_script/corona.js"></script>
+    <script src="/_script/navegation.js"></script>
 </head>
 <body>
     <header id="navbar">
-        <div class="logo">
-            <a href="index.html"><img src="_images/coronabrasiLogo.png" alt="Logo"></a>
+        <div id="toggle">
+            <div class="logo">
+                <a href="index.html"><img src="_images/coronabrasiLogo.png" alt="Logo"></a>
+            </div>
+            <nav id="navegation-links">
+                <ul onclick="menu()">
+                    <li><a href navlink="data.html" >Dados e Estatísticas</a></li>
+                    <li><a href navlink="prevencao.html">Prevenção</a></li>
+                    <li><a href="index.html">Informações Importantes</a></li>
+                    <li><a href="index.html">Notícias</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav id="navegation-links">
-            <ul>
-                <li><a href navlink="data.html">Dados e Estatísticas</a></li>
-                <li><a href navlink="prevencao.html">Prevenção</a></li>
-                <li><a href="index.html">Informações Importantes</a></li>
-                <li><a href="index.html">Notícias</a></li>
-            </ul>
-        </nav>
-        <aside id="donation">
-            <a href="">Me pague um café</a>
-        </aside>
-        <div class="nav-button" >
-            <a href="index.html">
+        <a href="">
+            <aside id="donation">
+                Me pague um café
+            </aside>
+        </a>
+        
+        <div id="nav-button" onclick="menu()">
+            <a href="javascript:void(0)">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
@@ -45,7 +51,7 @@
                     <img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo
                 </td>
                 <td>
-                    3,218,184
+                    2,807,490
                 </td>
             </tr>
             <tr>
@@ -53,7 +59,7 @@
                     <img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil
                 </td>
                 <td>
-                    79,361
+                    51,073
                 </td>
             </tr>
             <th class="row-title" colspan="2">
@@ -64,7 +70,7 @@
                     <img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo
                 </td>
                 <td>
-                    228,026
+                    195,812
                 </td>
             </tr>
             <tr>
@@ -72,7 +78,7 @@
                     <img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil
                 </td>
                 <td>
-                    5,511
+                    3,407
                 </td>
             </tr>
             <th class="row-title" colspan="2">
@@ -83,7 +89,7 @@
                     <img src="_images\5879326 - coronavirus covid19 disease incident infection pandemic virus.png" alt="Mundo"> Mundo
                 </td>
                 <td>
-                    1,000,033
+                    778,348
                 </td>
             </tr>
             <tr>
@@ -91,7 +97,7 @@
                     <img src="_images\iconfinder_Brazil_298568-smaller.jpg" alt="Brasil"> Brasil
                 </td>
                 <td>
-                    34,132
+                    26,573
                 </td>
             </tr>
         </table>
@@ -108,16 +114,19 @@
 
 <script>
     document.querySelectorAll('[navlink]').forEach(link => {
-        const content = document.getElementById('content')
-        link.onclick = function (e) {
-            e.preventDefault()
-            fetch(link.getAttribute('navlink'))
-                .then(resp => resp.text())
-                .then(html => content.innerHTML = html)
-        }
-    })
+    const content = document.getElementById('content')
+    link.onclick = function (e) {
+        e.preventDefault()
+        fetch(link.getAttribute('navlink'))
+            .then(resp => resp.text())
+            .then(html => content.innerHTML = html)
+    }
+})
+
+function menu() {
+    let menu = document.querySelector('#toggle') 
+    menu = menu.classList.toggle('responsive')
+}
 </script>
-
-
 </body>
 </html>

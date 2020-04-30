@@ -9,13 +9,18 @@ body {
     background-color: rgb(2, 128, 144);
 }
 
-#navbar {
+#navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
     background-color:rgb(5, 102, 141);
-    height: 60px;
+}
+
+#toggle {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 #navegation-links {
@@ -43,24 +48,14 @@ body {
     padding: 10px;
     border-radius: 25px;
     margin: 15px;
+    text-align: center;
+    text-decoration: none;
 }
 
-.nav-button {
-    display:none;
-}
-
-.nav-button .line {
-    width: 35px;
-    height: 5px;
-    background-color: rgba(0, 168, 150);
-    margin: 6px 0;
-}
-
-#navegation-links a, #donation a {
+header a {
     text-decoration: none;
     color: whitesmoke;
 }
-
 #content {
     display: flex;
     justify-content: center;
@@ -230,4 +225,73 @@ footer {
 
 .virus {
     font-style: italic;
+}
+
+#nav-button .line {
+    width: 35px;
+    height: 5px;
+    background-color: rgba(0, 168, 150);
+    margin: 6px 0;
+}
+
+#nav-button {
+    opacity: 0.5;
+}
+
+#nav-button:hover {
+    opacity: 1;
+}
+
+@media (min-width: 800px) {
+    #nav-button {
+        display: none;
+    } 
+}
+
+@media (max-width:400px) {
+    #donation {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    #navegation-links ul{
+        display: none;
+    }
+    #navbar {
+        justify-content: space-between
+    }
+    #donation {
+        position: absolute;
+        box-sizing: border-box;
+        right: 0;
+        top: 0;
+        margin: 10px 55px;
+    }
+
+    #nav-button {
+        position: absolute;
+        box-sizing: border-box;
+        right: 0;
+        top: 0;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+  
+    .responsive#toggle{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+     .responsive#toggle ul {
+        display: flex;
+        flex-direction: column;
+    }
+   
+}
+
+li:hover, #donation:hover {
+    background-color: rgba(240, 243, 189, .2);
 }
